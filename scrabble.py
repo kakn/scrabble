@@ -1,5 +1,3 @@
-### WORDS WITH FRIENDS HACKS ###
-
 import enchant
 import random
 import time
@@ -33,8 +31,7 @@ def factorisation(n):
 
 processor = []
 realwords = []
-fuck = input()
-n1 = list((fuck))
+n1 = list((input()))
 n = len(n1)
 
 def quicksearch(n):
@@ -51,8 +48,8 @@ def quicksearch(n):
                     realwords.append(word)
         return quicksearch(n-1)
 
-def hacks(n):
-    cunt = n**n
+def main(n):
+    count = n**n
     if n == 1:
         return 0
     if n >= 7:
@@ -64,9 +61,9 @@ def hacks(n):
             if d.check(word) == True:
                 if word not in realwords:
                     realwords.append(word)
-        return hacks(n-1)
+        return main(n-1)
     else:
-        for i in range(cunt):
+        for i in range(count):
             word = random.sample(n1, n)
             word = ''.join(word)
             if word not in processor:
@@ -74,10 +71,10 @@ def hacks(n):
             if d.check(word) == True:
                 if word not in realwords:
                     realwords.append(word)
-        return hacks(n-1)
+        return main(n-1)
 
 #quicksearch(n)
-hacks(n)
+main(n)
 
 #print(realwords)
 
